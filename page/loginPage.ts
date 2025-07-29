@@ -1,7 +1,8 @@
-import { loginSelectors } from "../utils/selectors";
+import { loginSelectors } from "../selector/selectors";
 import { expect } from "@playwright/test";
 import { Page } from "@playwright/test";
 import { UserCredentials } from "../utils/defaultUser";
+import { getUserRole } from "../utils/userRole"; 
 
 export async function superadminLogin(page : Page, credentials : UserCredentials) {
     await page.goto('');

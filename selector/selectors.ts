@@ -28,5 +28,29 @@ export const paginationSelectors = {
 }
 
 export const liveTvDetailsSelectors = {
-    detailButton : (page : Page, title : string) => page.locator('btn.btn-sm.btn-success').filter({ hasText: title }), 
+    detailButton : (page : Page) => page.getByRole('link', {name: 'Detail'}),
+    editButton : (page : Page) => page.getByRole('link', {name: 'Edit'}),
+    deleteButton : (page : Page) => page.getByRole('link', {name: 'Delete'}),
+    editCategoryButton : (page : Page) => page.getByRole('link', {name: 'Edit Category'}),   
+}
+
+export const addChannelSelectors = {
+    addChannelButton : (page : Page) => page.getByRole('link', {name: 'Add Channel'}),
+    logoUpload : (page : Page) => page.locator("input[type='file'][name='icon']"),
+    inputName : (page : Page) => page.locator('input[name="name"]'),
+    inputCategory : (page : Page) => page.locator('input[name="category"]'),
+    sourceDropdown : (page : Page) => page.locator('input[name="source"]'),
+    inputUrl : (page : Page) => page.locator('input[name="url"]'),
+    submitData : (page : Page) => page.getByRole('button', {name: 'Submit'}),  
+}
+
+export const siteSelectors = {
+    searchButton : (page : Page) => page.getByRole('button', {name: 'Search'}),
+    siteName : (page : Page) => page.getByRole('textbox', {name: 'Site Name'}),
+    companyName : (page : Page) => page.getByRole('textbox', {name: 'Company Name'}),
+    companyCode : (page : Page) => page.getByRole('textbox', {name: 'Company Code'}),
+    siteDetail : (page : Page) => page.getByRole('link', {name: 'Detail'}),
+    siteBack : (page : Page) => page.getByRole('link', {name: 'Back'}),
+    siteEdit : (page : Page) => page.getByRole('link', {name: 'Edit'}),
+    siteAdd : (page : Page) => page.getByRole('link', {name: 'Add Site'}),    
 }

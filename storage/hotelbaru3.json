@@ -1,0 +1,25 @@
+{
+  "cookies": [
+    {
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6IkIvanY2VHYxd0lJYUFOTDRQT2RaWFE9PSIsInZhbHVlIjoiQUtQcTA0VUxzbkY4bGUrVDQ5QVJHZXlVUVFIYWRFMFM0aTdNUlMzWnUzTjFtenBFbEgxM056ZENxbmhqWDhlcngvcVBBaEtBTU13WHlacUpJcGhKTTM3Nkp1em51Y0ZLb2RuVEt4cDdpNXFqemhYL1BWYy9YNFA3ZTg3QjZoUXgiLCJtYWMiOiI5YWI1Zjk2ZTNmM2I2NTY2NjJlZDJkYzhlYmIxZDM2NWJhODI5MjFlOGQ4Mzg4ZDUyOTAzZmViMGQzMWZjNGEwIiwidGFnIjoiIn0%3D",
+      "domain": "staging.vlepo.id",
+      "path": "/",
+      "expires": 1753762380.354595,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "vlepo_session",
+      "value": "eyJpdiI6IkUybEx1MFBSc0tUMWhJQXpvYmlDUVE9PSIsInZhbHVlIjoiNkRoMmtKaU9ITjJQU3ZpYjZFLy8rTHYyelFFSEZ4dlpNSHp1UW55dGltaGx1NG1vZmhUdGQ4ZFRqWGZMaWpiRm15QklCN1VYODJOdGwrcC9zYmE5cFdkOEZBK0N3T3dtcHJjVmZodFdOL2JGbk5DaXhPMFFqanpQWXFFdUZFNHciLCJtYWMiOiJmYzMzY2Q5M2Q3ZDcxZTE2NTgyMjIwNTRjNmVkNGIwOTYyOGU3ZGNiYjFkN2ZhOTU0NDE3NTgzOGEzMTU3NmIxIiwidGFnIjoiIn0%3D",
+      "domain": "staging.vlepo.id",
+      "path": "/",
+      "expires": 1753762380.354656,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

@@ -1,6 +1,11 @@
-import {liveTvChannelSelectors, paginationSelectors, liveTvDetailsSelectors} from "../../utils/selectors"
-import {expect, Page} from "@playwright/test"
-import {randomItem} from "./randomData"
+import {liveTvChannelSelectors, 
+    paginationSelectors, 
+    liveTvDetailsSelectors,
+    siteSelectors,
+    addChannelSelectors} from "../selector/selectors";
+import {expect, Page} from "@playwright/test";
+import {randomItem} from "../utils/data/randomData";
+import { time } from "console";
 
 
 export async function openDashboard (page : Page){
@@ -44,7 +49,24 @@ export async function paginationTest (page : Page) {
 }
 
 export async function detailButton (page : Page, title : string){
-    await liveTvDetailsSelectors.detailButton(page, title).click(); 
+    await liveTvDetailsSelectors.detailButton(page).nth(0).click();
+    await siteSelectors.siteBack(page).click();
+    
+    await liveTvDetailsSelectors.editButton(page).nth(0).click();
+    await siteSelectors.siteBack(page).click();
+
+    await liveTvDetailsSelectors.editCategoryButton(page).nth(0).click();
+    await siteSelectors.siteBack(page).click();
+     
+}
+
+export async function addChannel (page: Page){
+    await addChannelSelectors.addChannelButton(page).click();
+    await addChannelSelectors.inputName(page).fill(randomItem(['Channel A', 'Channel B', 'Channel C']));
+    await page.waitForTimeout(1000); // Wait for the input to be filled
+    await addChannelSelectors.inputCategory(page).fill(randomItem(['News', 'Sports', 'Entertainment']));
+    await page.waitForTimeout(1000); // Wait for the input to be filled
+    await addChannelSelectors.logoUpload(page).setInputFiles('./assets/peng.png'); 
 }
 
     

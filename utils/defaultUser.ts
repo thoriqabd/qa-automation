@@ -7,7 +7,7 @@ export type UserCredentials = {
     password : string;
 };
 
-export const defaultUser: Record<string, UserCredentials> = {
+export const defaultUser: Record<'superadmin' | 'admin', UserCredentials> = {
     superadmin : {
         email : process.env.DEFAULT_EMAIL || '',
         password : process.env.DEFAULT_PASSWORD || '',

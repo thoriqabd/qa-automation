@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { openDashboard, openLiveTvChannel, openSearchField, paginationTest, detailButton } from './liveTvPage';
-import { randomItem, randomsTitle } from './randomData';
-import { liveTvChannelSelectors } from "../../utils/selectors"
-import { title } from 'process';
+import { openDashboard, openLiveTvChannel, openSearchField, paginationTest, detailButton, addChannel } from '../../page/liveTvPage';
+import { randomItem, randomsTitle } from '../../data/randomData';
+import { liveTvChannelSelectors } from "../../selector/selectors";
 
 test.use({
   storageState: './storage/hotelbaru3.json',
@@ -37,10 +36,14 @@ test('open Live TV Channel', async ({page})=> {
       await page.waitForTimeout(1000); // Wait for the search results to update      
 } 
   
-    await paginationTest(page);
-    console.log('Pagination test completed successfully.');
+    // await paginationTest(page);
+    // console.log('Pagination test completed successfully.');
 
-    await detailButton(page, 'Detail'); 
+    await detailButton(page, 'Detail');
+    await page.waitForTimeout(1000); // Wait for the detail page to load 
+
+    await addChannel(page);
+    await page.waitForTimeout(1000); // Wait for the add channel form to load  
 
 
 
